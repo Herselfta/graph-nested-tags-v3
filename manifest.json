@@ -5,6 +5,6 @@
 	"minAppVersion": "0.15.0",
 	"description": "Links nested tags in graph view with file expansion support",
 	"author": "Herta Herselfta",
-	"authorUrl": "https://github.com/Herselfta/graph-nested-tags-v3.0",
+	"authorUrl": "https://github.com/Herselfta/graph-nested-tags-v3",
 	"isDesktopOnly": false
 }

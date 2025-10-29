@@ -12,7 +12,7 @@
 
 ```bash
 # Clone the repository
-git clone https://github.com/drPilman/obsidian-graph-nested-tags.git
+git clone https://github.com/Herselfta/graph-nested-tags-v3.git
 
 # Navigate to your vault's plugin directory
 cd /path/to/your/vault/.obsidian/plugins/

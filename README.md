@@ -1,7 +1,7 @@
 # Graph Nested Tags
 
-[![Release](https://img.shields.io/github/v/release/drPilman/obsidian-graph-nested-tags?style=flat-square)](https://github.com/drPilman/obsidian-graph-nested-tags/releases)
-[![License](https://img.shields.io/github/license/drPilman/obsidian-graph-nested-tags?style=flat-square)](LICENSE)
+[![Release](https://img.shields.io/github/v/release/Herselfta/graph-nested-tags-v3?style=flat-square)](https://github.com/Herselfta/graph-nested-tags-v3/releases)
+[![License](https://img.shields.io/github/license/Herselfta/graph-nested-tags-v3?style=flat-square)](LICENSE)
 
 An enhanced Obsidian plugin that displays nested tag hierarchies and tag-file relationships in graph views.
 
@@ -50,7 +50,7 @@ An enhanced Obsidian plugin that displays nested tag hierarchies and tag-file re
 3. Install and enable
 
 #### Manual Installation
-1. Download `main.js` and `manifest.json` from the [latest release](https://github.com/drPilman/obsidian-graph-nested-tags/releases)
+1. Download `main.js` and `manifest.json` from the [latest release](https://github.com/Herselfta/graph-nested-tags-v3/releases)
 2. Create folder `.obsidian/plugins/graph-nested-tags/` in your vault
 3. Copy files to the folder
 4. Reload Obsidian
@@ -144,8 +144,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ### Links
 
-- **This Repository**: [https://github.com/Herselfta/graph-nested-tags-v3.0](https://github.com/Herselfta/graph-nested-tags-v3.0)
-- **Report Issues**: [https://github.com/Herselfta/graph-nested-tags-v3.0/issues](https://github.com/Herselfta/graph-nested-tags-v3.0/issues)
+- **This Repository**: [https://github.com/Herselfta/graph-nested-tags-v3](https://github.com/Herselfta/graph-nested-tags-v3)
+- **Report Issues**: [https://github.com/Herselfta/graph-nested-tags-v3/issues](https://github.com/Herselfta/graph-nested-tags-v3/issues)
 - **Changelog**: [CHANGELOG.md](CHANGELOG.md)
 
 ### Original Plugin
@@ -213,7 +213,7 @@ Thanks to drPilman for creating the original plugin that inspired this enhanced 
 3. 安装并启用
 
 #### 手动安装
-1. 从 [最新发布](https://github.com/drPilman/obsidian-graph-nested-tags/releases) 下载 `main.js` 和 `manifest.json`
+1. 从 [最新发布](https://github.com/Herselfta/graph-nested-tags-v3/releases) 下载 `main.js` 和 `manifest.json`
 2. 在你的仓库中创建文件夹 `.obsidian/plugins/graph-nested-tags/`
 3. 将文件复制到该文件夹
 4. 重新加载 Obsidian
@@ -302,15 +302,15 @@ console.log('Settings:', plugin.settings);
 
 ### 致谢
 
-- **本版本**: [Herta Herselfta](https://github.com/Herselfta/graph-nested-tags-v3.0) - Enhanced v3.1
+- **本版本**: [Herta Herselfta](https://github.com/Herselfta/graph-nested-tags-v3) - Enhanced v3.1
 - **基于原插件**: [Graph Nested Tags by drPilman](https://github.com/drPilman/obsidian-graph-nested-tags)
 
 ---
 
 ## Links
 
-- **本仓库**: [https://github.com/Herselfta/graph-nested-tags-v3.0](https://github.com/Herselfta/graph-nested-tags-v3.0)
-- **提交问题**: [https://github.com/Herselfta/graph-nested-tags-v3.0/issues](https://github.com/Herselfta/graph-nested-tags-v3.0/issues)
+- **本仓库**: [https://github.com/Herselfta/graph-nested-tags-v3](https://github.com/Herselfta/graph-nested-tags-v3)
+- **提交问题**: [https://github.com/Herselfta/graph-nested-tags-v3/issues](https://github.com/Herselfta/graph-nested-tags-v3/issues)
 - **更新日志**: [CHANGELOG.md](CHANGELOG.md)
 
 ---

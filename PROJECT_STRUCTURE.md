@@ -207,7 +207,7 @@ graph-nested-tags/
 
 This is an enhanced fork of the original plugin by drPilman. All documentation and repository links have been updated to reflect:
 
-- **Current Repository**: https://github.com/Herselfta/graph-nested-tags-v3.0
+- **Current Repository**: https://github.com/Herselfta/graph-nested-tags-v3
 - **Current Author**: Herta Herselfta
 - **Original Plugin**: https://github.com/drPilman/obsidian-graph-nested-tags
 - **Original Author**: drPilman
