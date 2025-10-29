@@ -1,0 +1,10 @@
+{
+	"id": "graph-nested-tags",
+	"name": "Nested tags graph",
+	"version": "3.1.0",
+	"minAppVersion": "0.15.0",
+	"description": "Links nested tags in graph view with file expansion support",
+	"author": "Herta Herselfta",
+	"authorUrl": "https://github.com/Herselfta/graph-nested-tags-v3.0",
+	"isDesktopOnly": false
+}
