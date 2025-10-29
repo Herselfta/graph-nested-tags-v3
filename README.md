@@ -1,7 +1,7 @@
 # Graph Nested Tags
 
 [![Release](https://img.shields.io/github/v/release/Herselfta/graph-nested-tags-v3?style=flat-square)](https://github.com/Herselfta/graph-nested-tags-v3/releases)
-[![License](https://img.shields.io/github/license/Herselfta/graph-nested-tags-v3?style=flat-square)](LICENSE)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 An enhanced Obsidian plugin that displays nested tag hierarchies and tag-file relationships in graph views.
 
