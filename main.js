@@ -253,7 +253,31 @@ var GraphNestedTagsPlugin = class extends import_obsidian.Plugin {
 
   // Inject data processing into a graph view
   injectGraphLeaf(graphLeaf, graphType) {
+    if (!graphLeaf || !graphLeaf.view) {
+      return;
+    }
     const leafRenderer = graphLeaf.view.renderer;
+    
+    if (!leafRenderer) {
+      const plugin = this;
+      if (!Object.getOwnPropertyDescriptor(graphLeaf.view, 'renderer')) {
+        let rendererVal = undefined;
+        Object.defineProperty(graphLeaf.view, 'renderer', {
+          get() {
+            return rendererVal;
+          },
+          set(val) {
+            rendererVal = val;
+            if (val) {
+              plugin.injectGraphLeaf(graphLeaf, graphType);
+            }
+          },
+          configurable: true,
+          enumerable: true
+        });
+      }
+      return;
+    }
     
     if (this.injectedLeaves.has(leafRenderer)) {
       return;
@@ -270,6 +294,8 @@ var GraphNestedTagsPlugin = class extends import_obsidian.Plugin {
       if (!data || !data.nodes || typeof data.nodes !== 'object') {
         return leafRenderer.originalSetData.call(this, data);
       }
+
+
 
       const isGlobal = graphType === "graph";
       const isLocal = graphType === "localgraph";
@@ -340,12 +366,7 @@ var GraphNestedTagsPlugin = class extends import_obsidian.Plugin {
         if (tagId[i] === "/") {
           const parentTag = tagId.slice(0, i);
           
-          if (!(parentTag in nodes)) {
-            nodes[parentTag] = { 
-              type: "tag", 
-              links: {}
-            };
-          }
+          this.ensureNode(nodes, parentTag, 'tag');
           
           if (!nodes[parentTag].links) {
             nodes[parentTag].links = {};
@@ -386,12 +407,7 @@ var GraphNestedTagsPlugin = class extends import_obsidian.Plugin {
 
       for (const filePath of filesWithTag) {
         // Add file node if not exists
-        if (!(filePath in nodes)) {
-          nodes[filePath] = {
-            type: "file",
-            links: {}
-          };
-        }
+        this.ensureNode(nodes, filePath, 'file');
         
         if (!nodes[tagId].links) {
           nodes[tagId].links = {};
@@ -521,12 +537,12 @@ var GraphNestedTagsPlugin = class extends import_obsidian.Plugin {
       const af = this.app.vault.getAbstractFileByPath(path);
       if (af && af instanceof import_obsidian.TFile) {
         if (af.extension && af.extension.toLowerCase() !== 'md') return 'attachment';
-        return 'file';
+        return '';
       }
     } catch (e) {
       // ignore
     }
-    return 'file';
+    return '';
   }
 
   getNodeNeighbors(nodeId, nodes, tagIndex) {
@@ -542,14 +558,16 @@ var GraphNestedTagsPlugin = class extends import_obsidian.Plugin {
 
     const nodeType = nodes?.[nodeId]?.type;
 
+    const isFile = nodeType === 'file' || nodeType === '' || nodeType === 'focused';
+
     // File / attachment: expand via forward/back links
-    if (nodeType === 'file' || nodeType === 'attachment') {
+    if (isFile || nodeType === 'attachment') {
       const fileNeighbors = this.getFileNeighbors(nodeId);
       for (const k of fileNeighbors) neighbors.add(k);
     }
 
     // File: also expand into tag nodes (full behavior)
-    if (nodeType === 'file') {
+    if (isFile) {
       try {
         const af = this.app.vault.getAbstractFileByPath(nodeId);
         if (af && af instanceof import_obsidian.TFile) {
@@ -587,8 +605,16 @@ var GraphNestedTagsPlugin = class extends import_obsidian.Plugin {
       if (typeof nodeId === 'string' && nodeId.startsWith('#')) type = 'tag';
       else type = this.inferNodeTypeFromPath(nodeId);
     }
+    if (type === 'file') type = '';
 
-    nodes[nodeId] = { type, links: {} };
+    const node = { id: nodeId, type, links: {} };
+    if (type === '' || type === 'focused' || type === 'attachment') {
+      const file = this.app.vault.getAbstractFileByPath(nodeId);
+      if (file) {
+        node.file = file;
+      }
+    }
+    nodes[nodeId] = node;
   }
 
   linkNodes(nodes, a, b) {

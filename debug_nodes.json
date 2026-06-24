@@ -1,0 +1,49 @@
+{
+  "sample": {
+    "00 PARA/Resources/Knowledge/计算机科学 Computer Science/计算机科学 Computer Science.md": {
+      "type": "focused",
+      "links": {
+        "00 PARA/Areas/Work/阵道/技术美术 TA/技术美术 TA.md": true,
+        "00 PARA/Areas/Interests/智道/AI/AIGC Workflow/AIGC Workflow.md": true,
+        "00 PARA/Resources/Knowledge/计算机科学 Computer Science/计算机科学 Computer Science.md": true
+      },
+      "color": {
+        "a": 1,
+        "rgb": 16711680
+      }
+    },
+    "00 PARA/Areas/Work/阵道/技术美术 TA/技术美术 TA.md": {
+      "type": "",
+      "links": {
+        "#Technology_Stack": true
+      },
+      "color": {
+        "a": 1,
+        "rgb": 9820854
+      }
+    },
+    "00 PARA/Areas/Interests/智道/AI/AIGC Workflow/AIGC Workflow.md": {
+      "type": "",
+      "links": {
+        "#Technology_Stack/Workflow": true,
+        "#Technology_Stack/AIGC": true
+      },
+      "color": {
+        "a": 1,
+        "rgb": 9820854
+      }
+    },
+    "00 PARA/Areas/Interests/智道/AI/AI.md": {
+      "type": "",
+      "links": {
+        "00 PARA/Areas/Interests/智道/AI/AIGC Workflow/AIGC Workflow.md": true,
+        "00 PARA/Areas/Interests/智道/AI/Prompt Engineering/Prompt Engineering.md": true,
+        "00 PARA/Areas/Interests/智道/AI/Stable Diffusion/Stable Diffusion.md": true
+      }
+    },
+    "#Technology_Stack/Workflow": {
+      "type": "tag",
+      "links": {}
+    }
+  }
+}
