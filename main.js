@@ -298,12 +298,12 @@ var GraphNestedTagsPlugin = class extends import_obsidian.Plugin {
          (isLocal && plugin.settings.enableForLocalGraph));
 
       // Process data
-      if (nestedEnabled) {
-        plugin.processNestedTags(modifiedData);
-      }
-
       if (expansionEnabled) {
         plugin.expandTagFiles(modifiedData);
+      }
+
+      if (nestedEnabled) {
+        plugin.processNestedTags(modifiedData);
       }
 
       return leafRenderer.originalSetData.call(this, modifiedData);
